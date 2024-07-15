@@ -5,7 +5,7 @@ const cors = require("cors");
 const path = require("path");
 const homeRender = require("../home/home.render");
 
-const toDoRoute = require("../routes/todo.route");
+
 
 const modules = async (app, express) => {
   app.set("view engine", "ejs");
@@ -19,7 +19,7 @@ const modules = async (app, express) => {
   app.use(fileUpload());
   app.use("/", homeRender);
 
-  app.use("/todo", toDoRoute);
+ 
 
   app.use("/*", (req, res) => {
     res.render("error/error.ejs");
